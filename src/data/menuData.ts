@@ -16,7 +16,7 @@ export const menuItems: MenuItemType[] = [
     id: '1',
     name: { en: 'Idly', ta: 'இட்லி' },
     description: { en: 'Steamed rice cakes', ta: 'வேகவைத்த அரிசி கேக்குகள்' },
-    price: 40,
+    price: 39,
     category: 'breakfast',
     image: '/images/idly.webp'
   },
@@ -24,7 +24,7 @@ export const menuItems: MenuItemType[] = [
     id: '2',
     name: { en: 'Sambar Idly', ta: 'சாம்பார் இட்லி' },
     description: { en: 'Idly soaked in sambar', ta: 'சாம்பாரில் ஊறவைத்த இட்லி' },
-    price: 50,
+    price: 49,
     category: 'breakfast',
     image: '/images/idly.webp'
   },
