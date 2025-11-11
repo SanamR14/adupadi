@@ -34,6 +34,7 @@
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
+  position: relative;
 }
 
 .menu-header h1 {
@@ -58,84 +59,176 @@
   border: 3px solid white;
 }
 
-.language-switcher {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: white;
-  padding: 10px 15px;
-  border-radius: 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
-}
-
+/* Header Controls - Fixed positioning */
 .header-controls {
   position: fixed;
   top: 20px;
   right: 20px;
   display: flex;
-  gap: 15px;
-  z-index: 100;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
 }
 
-.cart-icon {
+/* Language Switcher */
+.language-switcher {
   background: white;
-  padding: 10px 15px;
+  padding: 12px 20px;
   border-radius: 30px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-weight: bold;
   transition: all 0.3s ease;
+  min-width: 120px;
+  border: 2px solid transparent;
+}
+
+.language-switcher:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: rgb(187, 64, 36);
+}
+
+/* Cart Icon */
+.cart-icon {
+  background: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  border: 2px solid transparent;
+  position: relative;
 }
 
 .cart-icon:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: rgb(187, 64, 36);
 }
 
 .cart-icon-symbol {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  flex-shrink: 0;
 }
 
 .cart-count {
   background: rgb(187, 64, 36);
   color: white;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  border: 2px solid white;
 }
 
 .cart-total-amount {
   color: rgb(187, 64, 36);
   font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
 }
 
-.language-switcher {
-  background: white;
-  padding: 10px 15px;
-  border-radius: 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: bold;
-  transition: all 0.3s ease;
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .home-page {
+    padding: 10px;
+  }
+
+  .menu-header h1 {
+    font-size: 2rem;
+  }
+
+  .menu-header p {
+    font-size: 1rem;
+  }
+
+  .header-controls {
+    top: 10px;
+    right: 10px;
+    gap: 8px;
+  }
+
+  .language-switcher {
+    padding: 10px 15px;
+    min-width: 100px;
+    font-size: 0.9rem;
+  }
+
+  .cart-icon {
+    padding: 10px 15px;
+    min-width: 120px;
+    font-size: 0.9rem;
+  }
+
+  .cart-total-amount {
+    font-size: 0.8rem;
+  }
+
+  .restaurant-logo {
+    width: 80px;
+    height: 60px;
+  }
 }
 
-.language-switcher:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+@media (max-width: 480px) {
+  .header-controls {
+    flex-direction: row;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    justify-content: space-between;
+  }
+
+  .language-switcher {
+    min-width: auto;
+    padding: 8px 12px;
+  }
+
+  .cart-icon {
+    min-width: auto;
+    padding: 8px 12px;
+  }
+
+  .cart-total-amount {
+    display: none; /* Hide amount on very small screens */
+  }
+
+  .menu-header {
+    margin-top: 70px; /* Add space for fixed header controls */
+  }
 }
+
+/* For very small screens, show simplified cart */
+@media (max-width: 360px) {
+  .cart-icon {
+    padding: 8px;
+    min-width: auto;
+  }
+
+  .cart-total-amount {
+    display: none;
+  }
+
+  .language-switcher span {
+    font-size: 0.8rem;
+  }
+}
+
