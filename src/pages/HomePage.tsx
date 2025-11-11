@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Language, MenuItemType, CategoryType } from "../types";
 import { APP_IMAGES } from "../data/menuData";
 import { getFallbackImage } from "../utils/imageUtils";
 import FoodMenu from "../components/FoodMenu";
+import CartPage from "./CartPage";
+import { useCart } from "../context/CartContext";
 import "./HomePage.css";
 
 interface HomePageProps {
@@ -18,6 +20,21 @@ const HomePage: React.FC<HomePageProps> = ({
   menuItems,
   categories,
 }) => {
+  const [showCart, setShowCart] = useState(false);
+  const { cart } = useCart();
+
+  const handleShowCart = () => {
+    setShowCart(true);
+  };
+
+  const handleBackToMenu = () => {
+    setShowCart(false);
+  };
+
+  if (showCart) {
+    return <CartPage language={language} onBackToMenu={handleBackToMenu} />;
+  }
+
   return (
     <div
       className="home-page-container"
@@ -58,11 +75,21 @@ const HomePage: React.FC<HomePageProps> = ({
           categories={categories}
         />
 
-        <div
-          className="language-switcher"
-          onClick={() => onLanguageChange(language === "en" ? "ta" : "en")}
-        >
-          <span>{language === "en" ? "தமிழ்" : "English"}</span>
+        <div className="header-controls">
+          <div
+            className="language-switcher"
+            onClick={() => onLanguageChange(language === "en" ? "ta" : "en")}
+          >
+            <span>{language === "en" ? "தமிழ்" : "English"}</span>
+          </div>
+
+          <div className="cart-icon" onClick={handleShowCart}>
+            <span className="cart-icon-symbol">🛒</span>
+            {cart.items.length > 0 && (
+              <span className="cart-count">{cart.items.length}</span>
+            )}
+            <span className="cart-total-amount">₹{cart.total}</span>
+          </div>
         </div>
       </div>
     </div>

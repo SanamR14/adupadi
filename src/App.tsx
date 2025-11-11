@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { Language } from './types';
-import { menuItems, categories } from './data/menuData';
-import LandingPage from './pages/LandingPage';
-import HomePage from './pages/HomePage';
-import './App.css';
+import React, { useState } from "react";
+import { Language } from "./types";
+import { menuItems, categories } from "./data/menuData";
+import LandingPage from "./pages/LandingPage";
+import HomePage from "./pages/HomePage";
+import { CartProvider } from "./context/CartContext";
+import "./App.css";
 
 function App() {
   const [language, setLanguage] = useState<Language | null>(null);
@@ -23,12 +24,14 @@ function App() {
   }
 
   return (
-    <HomePage
-      language={language}
-      onLanguageChange={handleLanguageChange}
-      menuItems={menuItems}
-      categories={categories}
-    />
+    <CartProvider>
+      <HomePage
+        language={language}
+        onLanguageChange={handleLanguageChange}
+        menuItems={menuItems}
+        categories={categories}
+      />
+    </CartProvider>
   );
 }
 
