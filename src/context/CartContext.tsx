@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
-import { CartItem, MenuItemType } from '../types';
+import { CartItem } from '../types'; // Removed unused MenuItemType import
 
 interface CartState {
   items: CartItem[];
