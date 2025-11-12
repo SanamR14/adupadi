@@ -104,11 +104,11 @@ export const menuItems: MenuItemType[] = [
   },
   {
     id: '12',
-    name: { en: 'Idiyappam', ta: 'இடியப்பம்' },
-    description: { en: 'String hoppers (Available on Monday and Thursday)', ta: 'நூல்போன்ற அப்பம் (திங்கள், வியாழக்கிழமைகளில்)' },
+    name: { en: 'Rava Idly', ta: 'ரவா இட்லி' },
+    description: { en: 'Semolina steamed cakes (Available on Monday and Thursday)', ta: 'ரவா மாவு இட்லி (திங்கள், வியாழக்கிழமைகளில்)' },
     price: 65,
-    category: 'breakfast-specials',
-    image: '/images/dosa.jpg'
+   category: 'breakfast-specials',
+   image: '/images/rava-idly.jpg'
   },
   {
     id: '13',
