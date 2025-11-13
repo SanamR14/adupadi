@@ -46,7 +46,7 @@ export const menuItems: MenuItemType[] = [
   },
   {
     id: '5',
-    name: { en: 'Podi Dosai', ta: 'போடி தோசை' },
+    name: { en: 'Podi Dosai', ta: 'பொடி தோசை' },
     description: { en: 'Dosa with spice powder', ta: 'மசாலா பொடி தோசை' },
     price: 55,
     category: 'breakfast',
@@ -62,7 +62,7 @@ export const menuItems: MenuItemType[] = [
   },
   {
     id: '7',
-    name: { en: 'Uthappam', ta: 'உத்தப்பம்' },
+    name: { en: 'Uthappam', ta: 'ஊத்தப்பம்' },
     description: { en: 'Thick rice pancake', ta: 'தடித்த அரிசி அப்பம்' },
     price: 60,
     category: 'breakfast',
@@ -70,7 +70,7 @@ export const menuItems: MenuItemType[] = [
   },
   {
     id: '8',
-    name: { en: 'Podi Uthappam', ta: 'போடி உத்தப்பம்' },
+    name: { en: 'Podi Uthappam', ta: 'பொடி ஊத்தப்பம்' },
     description: { en: 'Uthappam with spice powder', ta: 'மசாலா பொடி உத்தப்பம்' },
     price: 65,
     category: 'breakfast',
@@ -78,7 +78,7 @@ export const menuItems: MenuItemType[] = [
   },
   {
     id: '9',
-    name: { en: 'Onion Uthappam', ta: 'வெங்காய உத்தப்பம்' },
+    name: { en: 'Onion Uthappam', ta: 'வெங்காய ஊத்தப்பம்' },
     description: { en: 'Pancake with onions', ta: 'வெங்காயத்துடன் கூடிய உத்தப்பம்' },
     price: 70,
     category: 'breakfast',
@@ -112,7 +112,7 @@ export const menuItems: MenuItemType[] = [
   },
   {
     id: '13',
-    name: { en: 'Appam', ta: 'அப்பம்' },
+    name: { en: 'Appam', ta: 'ஆப்பம்' },
     description: { en: 'Bowl-shaped pancakes (Available on Tuesday and Friday)', ta: 'கிண்ண வடிவ அப்பம் (செவ்வாய், வெள்ளிக்கிழமைகளில்)' },
     price: 65,
     category: 'breakfast-specials',
